@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.dgr.firstwords.model">
+	<class name="com.dgr.firstwords.model.Category" table="categories">
+		 <id name="id" column="id">
+            <generator class="increment"/>
+        </id>
+        
+        <property name="catName" column="cat_name" type="string"></property>
+         <!-- 
+        <set name="questions" table="question_category" inverse="false" lazy="true" fetch="select" cascade="all">
+        	<key column="id_category"></key>
+        	<many-to-many entity-name="com.dgr.firstwords.model.Question">
+        		<column name="id_question" ></column>
+        	</many-to-many>
+        </set>
+          -->
+	</class>
+</hibernate-mapping>

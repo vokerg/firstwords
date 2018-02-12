@@ -1,0 +1,14 @@
+<div ng-show="isShowQuestion" id="fullscreen">
+	<div class="row">
+		<div class="col-xs-6 show-image">
+	    	<img class="img-responsive" ng-src="{{ questions[0].imgSrc }}" ng-click="putResult(0)">
+	    	
+    		<input class="update" type="button" value="Update" />	    	
+		</div>
+		<div class="col-xs-6">
+	    	<img class="img-responsive" ng-src="{{ questions[1].imgSrc }}" ng-click="putResult(1)">
+	    </div>
+	 </div> 
+	 <correct-answer name={{questions[correctAnswer].name}}></correct-answer>
+</div>
+

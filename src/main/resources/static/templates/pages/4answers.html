@@ -1,0 +1,19 @@
+<div ng-show="isShowQuestion" id="fullscreen">
+	    <div class="row row-container" >
+	        <div class="col-xs-4 col-xs-offset-2 img-holder">
+		    	<img class="img-responsive img-def" ng-src="{{ questions[0].imgSrc }}" ng-click="putResult(0)">
+	        </div>
+	        <div class="col-xs-4 img-holder">
+		    	<img class="img-responsive img-def" ng-src="{{ questions[1].imgSrc }}" ng-click="putResult(1)">
+	        </div>    
+	    </div>
+	    <div class="row row-container" >
+	        <div class="col-xs-4 col-xs-offset-2 img-holder">
+		    	<img class="img-responsive img-def" ng-src="{{ questions[2].imgSrc }}" ng-click="putResult(2)">
+	        </div>
+	        <div class="col-xs-4 img-holder">
+		    	<img class="img-responsive img-def" ng-src="{{ questions[3].imgSrc }}" ng-click="putResult(3)">
+	        </div>
+		</div>
+		<correct-answer name={{questions[correctAnswer].name}}></correct-answer>
+</div>

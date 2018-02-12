@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html ng-app="questionsApp">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Master list</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css"/>
+	<script type="text/javascript" src="angular.min.js"></script>
+	<script type="text/javascript" src="main.js"></script>
+</head>
+<body ng-controller="EditController as editCtrl">
+          <h2 class="sub-header">Masters</h2>
+          <div class="table-responsive">
+            <table class="table table-striped table-hover">
+              <thead>
+                <tr>
+                  <th>Id</th>
+                  <th>Name</th>
+                  <th>Image URL</th>
+                  <th>Audio URL</th>    
+                </tr>
+              </thead>
+              <tbody>
+               <!--  
+               <tr ng-repeat-start="question in editCtrl.questions">
+                -->
+                <tr ng-repeat-start="question in editCtrl.questions">
+                  <td><a href ng-click="editCtrl.showEditId=question.id">{{ question.id }}</a></td>
+                  <td>{{ question.name }}</td>
+                  <td>{{ question.imgSrc }}</td>
+                  <td>{{ question.audioSrc }}</td>
+                </tr>
+                
+                <tr ng-repeat-end 
+                	ng-show="editCtrl.showEditId == question.id" 
+                	ng-submit="editCtrl.updateQuestion(question)">
+                  <td>
+                  	<input type="button" value="Save" ng-click="editCtrl.updateQuestion(master)"/>
+                  	<input type="button" value="Cancel" ng-click="editCtrl.showEditId=-1"/>
+                  	<input type="button" value="Delete" ng-click="editCtrl.removeQuestion(master)"/>
+                  </td>
+                  <td><input type="text" ng-model="question.name"/></td>
+                  <td><input type="text" ng-model="question.imgSrc"/></td>
+                  <td><input type="text" ng-model="question.audioSrc"/></td>
+                </tr>
+                
+               </tbody>
+              </table>
+             </div>
+             
+             <form name="addQuestion" ng-controller="QuestionController as qCtrl" ng-submit="qCtrl.addQuestion(question)">
+             Name: {{ editCtrl.question.name }}<br>
+             Image URL: {{ qCtrl.question.imgSrc }}
+             Sound URL: {{ qCtrl.question.audioSrc }}
+             	<div>
+             		<label>Name:</label>
+             		<input type="text" ng-model="qCtrl.question.name"/>
+             	</div>
+             	<div>
+             		<label>Image URL:</label>
+             		<input type="text" ng-model="qCtrl.question.imgSrc"/>
+             	</div>
+             	<div>
+             		<label>Sound URL:</label>
+             		<input type="text" ng-model="qCtrl.question.audioSrc"/>
+             	</div>             	
+             	<input type="submit" value="submit"/>
+             </form>
+             
+</body>
+
+
+</html>
+

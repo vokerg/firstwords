@@ -1,0 +1,13 @@
+<div ng-show="isShowQuestion" id="fullscreen">
+	<div class="row">
+		<div class="col-xs-6">
+	    	<img class="img-responsive" ng-src="{{ mainCtrl.getCurrentQuestionList()[0].imgSrc }}" ng-click="mainCtrl.putResult(0)">
+		</div>
+		<div class="col-xs-6">
+	    	<img class="img-responsive" ng-src="{{ mainCtrl.getCurrentQuestionList()[1].imgSrc }}" ng-click="mainCtrl.putResult(1)">
+	    </div>
+	 </div> 
+	 <correct-answer name={{mainCtrl.getCurrentQuestionList()[mainCtrl.getCorrectAnswer()].name}}></correct-answer>
+
+</div>
+

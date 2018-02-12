@@ -1,0 +1,22 @@
+<div ng-show="isShowQuestion" id="fullscreen">
+	    <div class="row row-container" >
+	    	<div class="col-xs-2 img-holder"></div>
+	        <div class="col-xs-4 img-holder">
+	        	<img class="img-responsive img-def" ng-src="{{ mainCtrl.getCurrentQuestionList()[0].imgSrc }}" ng-click="mainCtrl.putResult(0)">
+	        </div>
+	        <div class="col-xs-4 img-holder">
+	            <img class="img-responsive img-def" ng-src="{{ mainCtrl.getCurrentQuestionList()[1].imgSrc }}" ng-click="mainCtrl.putResult(1)">
+	        </div>
+	        <div class="col-xs-2 img-holder"></div>    
+	    </div>
+	    <div class="row row-container" >
+	        <div class="col-xs-2 img-holder"></div>
+	        <div class="col-xs-4 img-holder">
+	        	<img class="img-responsive img-def" ng-src="{{ mainCtrl.getCurrentQuestionList()[2].imgSrc }}" ng-click="mainCtrl.putResult(2)">
+	        </div>
+	        <div class="col-xs-4 img-holder">
+	            <img class="img-responsive img-def" ng-src="{{ mainCtrl.getCurrentQuestionList()[3].imgSrc }}" ng-click="mainCtrl.putResult(3)">
+	        </div>
+	        <div class="col-xs-2 img-holder"></div></div>
+		<div class="text-center" onclick="goFullScreen()"><h1>{{ mainCtrl.getCurrentQuestionList()[mainCtrl.getCorrectAnswer()].name }}</h1></div>
+</div>
